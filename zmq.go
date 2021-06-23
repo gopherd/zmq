@@ -278,5 +278,5 @@ func newClaim() *claim {
 	}
 }
 
-func (claim *claim) Err() chan<- error      { return claim.err }
-func (claim *claim) Message() chan<- []byte { return claim.msg }
+func (claim *claim) Err() <-chan error      { return claim.err }
+func (claim *claim) Message() <-chan []byte { return claim.msg }
