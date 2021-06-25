@@ -203,6 +203,7 @@ func newPuller(topic, addr string, consumer mq.Consumer) (*puller, error) {
 		topic:    topic,
 		socket:   socket,
 		consumer: consumer,
+		claim:    newClaim(),
 	}
 	if err := p.consumer.Setup(); err != nil {
 		return nil, err
