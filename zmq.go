@@ -114,7 +114,7 @@ func (c *conn) Subscribe(topic string, consumer mq.Consumer) error {
 	if err != nil {
 		return err
 	}
-	if err := c.discovery.Register(context.TODO(), topic, "0", addr, false); err != nil {
+	if err := c.discovery.Register(context.TODO(), topic, "0", addr, false, 0); err != nil {
 		return err
 	}
 	go p.start()
